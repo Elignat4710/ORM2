@@ -10,7 +10,6 @@ class Builder
     private $query;
     private $table;
     private $modelName;
-    private $with;
 
     public function __construct(string $modelName, string $table)
     {
@@ -35,7 +34,7 @@ class Builder
         $this->query .= ' WHERE ';
 
         foreach ($params as $param) {
-            $this->query .= "$param[0]$param[1]'$param[2]'";
+            $this->query .= "$this->table.$param[0]$param[1]'$param[2]'";
 
             if (end($params) == $param) {
                 break;
@@ -95,7 +94,7 @@ class Builder
 
     public function with($table, $primaryKey, $localKey)
     {
-        $this->query .= "JOIN $table ON $this->table.$primaryKey = $table.$localKey";
+        $this->query .= " JOIN $table ON $this->table.$primaryKey = $table.$localKey";
 
         return $this;
     }

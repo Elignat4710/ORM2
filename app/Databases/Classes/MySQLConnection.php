@@ -5,6 +5,7 @@ namespace App\Database\Classes;
 
 
 use App\Databases\Interfaces\Connection;
+use PDO;
 
 class MySQLConnection implements Connection
 {
