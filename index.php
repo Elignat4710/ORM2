@@ -28,4 +28,8 @@ require 'vendor/autoload.php';
 //var_dump(PostModel::with('users', 'user_id', 'id'));
 //var_dump(PostModel::with('users', 'user_id', 'id'));
 //var_dump(PostModel::with('users', 'user_id', 'id')->where([['title', '=', 'title 2']])->get());
-var_dump(PostModel::with('users', 'user_id', 'id')->where([['title', '=', 'title']])->get());
+//var_dump(PostModel::with('users', 'user_id', 'id')->where([['title', '=', 'title']])->get());
+//var_dump(PostModel::where(['title', '=', 'title'])->update([
+//    'title' => 'test'
+//]));
+
